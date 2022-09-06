@@ -1,0 +1,15 @@
+package test.step4;
+
+import java.util.Scanner;
+
+import model.MemberDAO;
+
+public class TestDeleteMember {
+	
+	public static void main(String[] args) {
+		
+		MemberDAO dao = new MemberDAO();
+		Scanner scanner = new Scanner(System.in);
+		
+	}
+}

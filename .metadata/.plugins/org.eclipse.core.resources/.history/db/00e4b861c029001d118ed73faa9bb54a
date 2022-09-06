@@ -1,0 +1,1 @@
+select id,password,name,address from member;

@@ -1,0 +1,9 @@
+package test.step5;
+
+public class TestFindMemberAll {
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

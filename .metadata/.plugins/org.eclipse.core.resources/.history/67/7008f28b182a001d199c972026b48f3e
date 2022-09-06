@@ -1,0 +1,10 @@
+package step3;
+
+import common.DbConfig;
+
+public class TestJdbcSelectById {
+	public static void main(String[] args) {
+		Class.forName(DbConfig.URL);
+		
+	}
+}

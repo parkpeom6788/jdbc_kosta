@@ -1,0 +1,11 @@
+package book.model.vo;
+
+public class Book {
+	
+	private int bookid; // 도서 번호
+	private String title; // 도서명
+	private String author; // 작가명
+	private String publisher; // 출판사
+	private String puliisherDate; // 출판일
+	
+}

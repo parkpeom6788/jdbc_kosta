@@ -1,0 +1,21 @@
+package step2;
+
+import java.sql.SQLException;
+
+import model.MemberDAO;
+
+public class TestLoginMember {
+	public static void main(String[] args) {
+		
+		try {
+			MemberDAO dao = new MemberDAO();
+			
+			
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

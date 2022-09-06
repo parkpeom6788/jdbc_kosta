@@ -1,0 +1,32 @@
+package member.controller;
+
+import java.util.List;
+
+import member.model.service.MemberService;
+import member.model.vo.Member;
+import member.view.MemberView;
+
+public class MemberController {
+	
+	private MemberService ms = new MemberService();
+	private MemberView mv = new MemberView();
+	
+	// 1. 새 회원 등록
+	public void insertMember(Member m) {
+		int result = ms.insertMember(m);
+		
+		if(result > 0) {
+			mv.displaySuccess("insert");
+		} else {
+			mv.displayError("insert");
+		}
+	}
+	
+	// 2. 모든 회원 조회
+	public void selectAll() {
+		List<Member> mList= ms.selectAll();
+		mv.displayList(mList);
+	}
+	
+	
+}

@@ -1,0 +1,19 @@
+
+create table card(
+	id varchar2(100) primary key,
+	name varchar2(100) not null
+)
+create table point(
+	id varchar2(100) primary key,
+	point_type varchar(100) not null,
+	point number not null
+)
+-- 트랜잭션했을때랑 안했을때의 차이 
+
+select * from card;
+select * from point;
+
+delete from card;
+delete from point;
+
+commit;

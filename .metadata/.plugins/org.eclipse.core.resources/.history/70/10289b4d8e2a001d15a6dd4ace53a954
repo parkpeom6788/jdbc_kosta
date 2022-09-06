@@ -1,0 +1,9 @@
+package test.step4;
+
+public class TestDeleteMember {
+	
+	public static void main(String[] args) {
+		
+		
+	}
+}

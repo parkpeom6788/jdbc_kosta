@@ -1,0 +1,38 @@
+package step.step1;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+// 방명록에 글쓰기
+public class TestRegisterGuestBook {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+		try {
+			dao.registerGuestBook(new GuestBookVO());
+			
+			System.out.println(dao.getConnection());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void closeAll(PreparedStatement pstmt , Connection con) {
+		if(pstmt!=null)
+			try {
+				pstmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+	public void closeAll(PreparedStatement pstmt , ResultSet rs , Connection con) {
+		if(rs != null) // 역순으로 ResultSet 먼저 닫음 
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		closeAll(pstmt,con);
+	}
+}

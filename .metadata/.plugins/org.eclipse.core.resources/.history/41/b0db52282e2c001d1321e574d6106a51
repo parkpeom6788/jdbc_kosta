@@ -1,0 +1,9 @@
+package common;
+
+public class JDBCTemplate {
+	
+	public static Connection getConnection() {
+		
+	}
+	
+}

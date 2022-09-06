@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="JdbcExample"/>
+    <fullyQualifiedTypeName name="model.MemberDAO"/>
+    <fullyQualifiedTypeName name="model.MemberVO"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="model.PetDAO"/>
+    <fullyQualifiedTypeName name="model.PetVO"/>
+    <fullyQualifiedTypeName name="book.common.JDBCTemplate"/>
+    <fullyQualifiedTypeName name="book.model.vo.Book"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.model.dao.Employee"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="member.view.MemberMenu"/>
+    <fullyQualifiedTypeName name="member.controller.MemberController"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="common.JDBCTemplate"/>
+    <fullyQualifiedTypeName name="member.model.vo.Member"/>
+    <fullyQualifiedTypeName name="member.view.MemberView"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="model.GuestBookDAO"/>
+    <fullyQualifiedTypeName name="model.GuestBookVO"/>
+    <fullyQualifiedTypeName name="test.step1.CardDAO"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="common.DbConfig"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="model.CardDAO"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="Solution"/>
+</qualifiedTypeNameHistroy>

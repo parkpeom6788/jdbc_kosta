@@ -1,0 +1,12 @@
+package test;
+
+import java.util.ArrayList;
+
+public class TestFindPetAll {
+	
+	public static void main(String[] args) {
+		
+		PetDAO dao = new PetDAO();
+		ArrayList<PetVO> list = dao
+	}
+}

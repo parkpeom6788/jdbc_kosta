@@ -1,0 +1,27 @@
+package step3;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import common.DbConfig;
+
+/*
+ * select name , address from member where id = ?; 
+ */
+public class TestJdbcSelectById {
+	public static void main(String[] args) {
+		
+		try {
+			Class.forName(DbConfig.DRIVER);
+			Connection con = DriverManager.getConnection(DbConfig.URL,"scott","tiger");
+			String sql = "select name , address from member where id = ?";
+			con.prepareStatement(sql);
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

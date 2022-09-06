@@ -1,0 +1,12 @@
+package test.step4;
+
+import model.MemberDAO;
+
+public class TestDeleteMember {
+	
+	public static void main(String[] args) {
+		
+		MemberDAO dao = new MemberDAO();
+		
+	}
+}

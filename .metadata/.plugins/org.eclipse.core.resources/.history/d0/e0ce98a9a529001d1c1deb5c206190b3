@@ -1,0 +1,22 @@
+package step1;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class TestjdbcSelectAll {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.OracleDriver";
+		String dbUrl = "jdbc:oracle:thin:@127.0.0.1:1521:xe";// url : 유일한 자원 위치 , 데이터베이스 서버 위치를 정해줘야 서버에 접속  , @아이피 :포트: 필수 
+		try {
+			Class.forName(driver); // class loading , spring - 리플렉션 API 기본 작업이 클래스 로딩 - Static , driver 가 로드되도록 구현되어 있음 
+			System.out.println("oracle jdbc driver loading");
+			DriverManager.getConnection(dbUrl,"scott","tiger"); // 드라이버 로딩
+			System.out.println("oracle db connection");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,23 @@
+package book.controller;
+
+import book.model.service.BookService;
+import book.model.vo.Book;
+import book.view.BookView;
+
+public class bookController {
+	
+	private BookService bs = new BookService();
+	private BookView bv = new BookView();
+	
+	// 1. 도서 추가
+	public void bookinsert(Book bookAdd) {
+		int result = bs.bookInsert(bookAdd);
+		
+		if(result > 0) {
+			System.out.println("도서 정보 추가 완료");
+		} else {
+			bv.bookErrorMsg("insert");
+		}
+	}
+	
+}

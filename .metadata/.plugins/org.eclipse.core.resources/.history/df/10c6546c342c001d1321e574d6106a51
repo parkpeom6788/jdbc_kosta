@@ -1,0 +1,11 @@
+package run;
+
+public class TestMain {
+	
+	public static void main(String[] args) {
+		
+		MemberMenu mm = new MemberMenu();
+		mm.displayMenu();
+		
+	}
+}

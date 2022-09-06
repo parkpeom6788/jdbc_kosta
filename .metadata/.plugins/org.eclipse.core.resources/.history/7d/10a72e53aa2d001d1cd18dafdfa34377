@@ -1,0 +1,7 @@
+
+/*
+  Transaction ( 트랜잭션 ) : 작업단위
+  
+ */
+
+select * from emp where ename  like '%S%';

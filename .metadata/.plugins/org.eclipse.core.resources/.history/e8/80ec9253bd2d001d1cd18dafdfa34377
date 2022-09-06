@@ -1,0 +1,71 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import common.DbConfig;
+
+public class CardDAO {
+
+	public void registerCardAndPointVer1(String id, String name, String pointType, int point) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DriverManager.getConnection(DbConfig.URL,DbConfig.USER,DbConfig.PASS);
+			String insertCardSql="insert into card(id,name) values(?,?)";
+			pstmt = con.prepareStatement(insertCardSql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			int cardResult = pstmt.executeUpdate();
+			System.out.println("카드 등록 OK :" + cardResult);
+
+			// 하나의 컨넥션 상에서 여러 개의 SQL을 실행하기 위해 pstmt를 close한다
+			// connection은 살아있다 
+			pstmt.close(); 
+			
+			String insertPointSql="insert into point(id,point_type,point) values(?,?,?)";
+			pstmt = con.prepareStatement(insertPointSql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pointType);
+			pstmt.setInt(3, point);
+			int pointResult = pstmt.executeUpdate();
+			System.out.println("포인트 등록 OK : " + pointResult);
+		} finally {
+			closeAll(pstmt,con);
+		}
+	} // method
+	
+	public void registerCardAndPointVer2(String id, String name, int point , String pointtype ) throws SQLException {	
+		Connection con = null;
+		PreparedStatement pstmt = null;
+	try {	
+		con = DriverManager.getConnection(DbConfig.URL, DbConfig.USER, DbConfig.PASS);
+		con.setAutoCommit(false);
+		
+		String query = "insert into card(name,id) values(?,?)";
+		pstmt = con.prepareStatement(query);
+		
+		pstmt.setString(1, name);
+		pstmt.setString(2,id);
+		pstmt.executeUpdate();
+		pstmt.close();
+			query = "insert into point(id,point,point_type) values(?,?,?)";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, point);
+			pstmt.setString(3, pointtype);
+			con.commit();
+
+	} catch(Exception e) {
+			con.rollback(); 
+		}
+	}
+	public void closeAll(PreparedStatement pstmt, Connection con) throws SQLException {
+		if(pstmt!=null)	
+				pstmt.close();
+		if(con!=null)
+			con.close();
+		}
+	}

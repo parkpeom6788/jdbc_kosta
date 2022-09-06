@@ -1,0 +1,7 @@
+package common;
+
+public interface DbConfig {
+	
+	String driver = "oracle.jdbc.OracleDriver"; // 드라이버 : 개발자가 데이터베이스를 제어하기 위한 필요한 sql를 실행을 잘할수있도록 도와줌
+	String dbUrl = "jdbc:oracle:thin:@127.0.0.1:1521:xe"
+}

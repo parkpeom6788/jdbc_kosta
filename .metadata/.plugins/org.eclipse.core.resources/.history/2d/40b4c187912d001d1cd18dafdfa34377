@@ -1,0 +1,15 @@
+package test.step2;
+
+import java.util.ArrayList;
+
+import model.GuestBookDAO;
+import model.GuestBookVO;
+
+public class TestFindAllGuestBookList {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+		
+		ArrayList<GuestBookVO> list = dao.findAllGuestBookListOrderByNoDesc();
+		
+	}
+}

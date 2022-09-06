@@ -1,0 +1,24 @@
+package test.step1;
+
+import java.util.Scanner;
+
+import model.MemberDAO;
+/*
+ * 아이디로 회원정보를 검색
+ */
+public class TestFindMemberById {
+	public static void main(String[] args) {
+		try {
+			MemberDAO dao = new MemberDAO();
+			System.out.println("**아이디로 회원검색**");
+			Scanner scanner = new Scanner(System.in);
+			
+			
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}

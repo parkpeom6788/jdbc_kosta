@@ -1,0 +1,12 @@
+package test.step2;
+
+import model.GuestBookDAO;
+
+public class TestFindAllGuestBookList {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+		
+		dao.findAllGuestBookListOrderByNoDesc();
+		
+	}
+}

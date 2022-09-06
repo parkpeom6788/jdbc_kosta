@@ -1,0 +1,13 @@
+package test.step5;
+
+import model.MemberDAO;
+
+public class TestFindMemberAll {
+	
+	public static void main(String[] args) {
+
+		MemberDAO dao = new MemberDAO();
+		
+		
+	}
+}

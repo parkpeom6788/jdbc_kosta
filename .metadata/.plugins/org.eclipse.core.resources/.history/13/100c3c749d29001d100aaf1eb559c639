@@ -1,0 +1,58 @@
+/*
+	SQL (Structured Query Language) : 데이터베이스를 정의 , 조작 , 제어하는 언어 
+	
+	1. DDL ( Data Definition Language : 데이터 정의어 ) - CREATE , DROP , ALTER - 테이블의 구조 변경
+	2. DML( Data Manipulation Language : 데이터 조작어 ) - INSERT , SELECT , UPDATE , DELETE  - 정보 조회 생성 수정 삭제 
+																							( CRUD : Create , Read , Update , Delete )
+	3. DCL ( Data Control Language : 데이터 제어어 ) - GRANT 자원에 접근할 권한을 준다
+		grant connect,resource to scott - 권한 부여 GRANT , REVOKE 권한 취소
+	4. TCL ( Transaction Control Language : 트랜잭션 제어어 ) - COMMIT (메모리를 실제 디스크로 올림(실제DB반영) , ROLLBACK 작업취소 원상태로 돌림
+																								  ROLLBACK 예 ) 한사람이 돈을 빼서 넣는작업 돈을 뺏는데 문제 발생시 취소 																							  
+*/
+-- SQL 실행시에는 영역 선택 후 alt + x  또는 마.오 후  execute selected text 를 선택하면 된다
+-- DDL 
+-- CREATE : 테이블 생성
+-- TABLE : 데이터 저장하는 공간 , COLUMN : 속성 attribute , DATA TYPE : 자료형 , CONSTRAINT : 제약조건 
+-- 소문자 우리가 지음 , 대문자 예약어 , 제약조건 
+-- id : column 명
+-- VARCHAR2(100) : 오라클 문자열 데이터 타입 
+-- PRIMARY KEY : constraint 제약조건 PK - UNIQUE 유일 + NOT NULL : 유일해야 하며 데이터가 존재해야 함 
+	CREATE TABLE member (
+		id VARCHAR2(100) PRIMARY KEY,
+		password VARCHAR2(100) NOT NULL,
+		name VARCHAR2(100) NOT NULL,
+		address VARCHAR2(100)		
+	)
+-- 실행 alt + x	
+-- dml : insert 구문 
+	insert into member (id,password,name,address) values('java','a','아이유','오리');
+	insert into member (id,password,name,address) values('spring','a','강하늘','미금');
+-- dml : select 구문
+	select * from member
+	
+-- constraint 제약 조건 테스트 
+-- 아래 sql 은 error : 이유는 id는 primary key 이고 이 제약조건은 유일해야 하고 not null이어야 함
+-- 기존 member에 spring 이라는 id가 존재하므로 error 예 ) school project id중복 이셉션이므로 데이터베이스에 미리 만들어져야 한다 - 데이터베이스에서 무결성(결점이 없다) 을 보장한다  
+	insert into member (id,password,name,address) values('spring','b','손석구','종로'); -- primary key
+	-- password 컬럼은 not null 제약조건이 있어서 반드시 insert 되어야 함 , 아래는 password 가 없으므로
+	-- error 가 남 
+	insert into member (id,name,address) values('jsp','손석구','종로'); -- null 
+	
+	-- success : address는 별도의 제약조건이 없으므로 insert 하지 않아도 됨 , 아래는 정상적으로 수행됨
+	insert into member (id,password,name) values('jsp','a','손석구');   
+	
+-- dml : select (read) 
+	select id from member;	
+	select id,name from member;	
+	select id,name,address from member;	
+-- dml : select column ,column... from table명 where column = '검색어';
+-- 아이디가 java 인 회원의 name 과 address를 조회한다
+	select name,address from member where id='java';
+-- name 이 강하늘인 회원의 id와 address를 조회한다
+	select id,address from member where name='강하늘';	
+-- id 가 java 이고 password 가 a 인 회원의 name,address 를 조회한다 
+	select name,address from member where id = 'java' and password = 'a';
+-- passwrod가 다르므로 조회되지 않는다 and 연산이므로 
+	select name,address from member where id = 'java' and password = 'b';
+	
+	

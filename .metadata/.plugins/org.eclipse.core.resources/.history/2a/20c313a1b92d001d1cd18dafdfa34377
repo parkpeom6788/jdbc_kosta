@@ -1,0 +1,23 @@
+package test.step1;
+
+public class TestThransaction1 {
+	public static void main(String[] args) {
+		try {
+			CardDAO dao = new CardDAO();
+			// 정상 수행
+			// dao.registerCardAndPointVer1("spring", "성시경", "스벅", 10000);
+			// 비정상 수행 상황 테스트 => Exception ( 포인트 발급 시점에 )
+			/*
+			 *  아이유 고객에 대한 카드는 발급되고
+			 *  포인트는 지급되지 않는 문제가 발생될 수 있는 상황
+			 *  ==> 이런 부분을 트랜잭션 처리를 통해 문제 상황을 사전에 방지하도록 한다
+			 *  registerCardAndPointVer2 메서드에서 트랜잭션 처리해본다
+			 */
+			dao.registerCardAndPointVer1("java", "아이유", null, 9000);
+			
+			dao.registerCardAndPointVer2("java", "아이유", null, 9000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

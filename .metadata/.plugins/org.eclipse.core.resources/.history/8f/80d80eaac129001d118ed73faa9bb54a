@@ -1,0 +1,33 @@
+package step2;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import common.DbConfig;
+
+public class TestJdbcInsert {
+	public static void main(String[] args) {
+		try {
+			Class.forName(DbConfig.DRIVER);
+			Connection con = DriverManager.getConnection(DbConfig.URL,"scott","tiger");
+			System.out.println("db connection");
+			// 먼저 시스템클라이언트에서 실행해보고 확인이 되면 넣는다 
+			String insertSql = "insert into member(id,password,name,address) values(?,?,?,?)"; // 속도를 빨리하기 위해 물음표 사용
+			PreparedStatement pstmt = con.prepareStatement(insertSql);
+		
+			pstmt.setString(1,"aop"); // 첫번째 물음표에 정보 할당 
+			pstmt.setString(2,"1234"); 
+			pstmt.setString(3, "깍두기");
+			pstmt.setString(4, "구성");
+			
+			int result = pstmt.executeUpdate(); // 정수- 몇명이 등록이 됏는지 카운트
+			
+			System.out.println("insert count : " + result);
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

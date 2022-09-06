@@ -1,0 +1,10 @@
+**01-jdbc-basic-inst**
+
+JDBC : Java Database Connectivity
+	자바 어플리케이션과 데이터베이스의 연동을 위한 기술
+	
+일반유저 <------> Java Application <------>  JDBC ( interface , driver 구현체 ) <-- SQL --->  <-------> Database ( Oracle ) 
+
+JDBC 설계구조
+- JDBC 표준 ( 인터페이스 ) 을 설계하는 측 ( Sun < Oracle ) 
+- DB Vendor(회사)에서는 JDBC 표준에 의거해 

@@ -1,0 +1,20 @@
+package step2;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import model.MemberDAO;
+
+public class TestLoginMember {
+	public static void main(String[] args) {
+		
+		try {
+			MemberDAO dao = new MemberDAO();
+			Scanner scanner = new Scanner(System.in);
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

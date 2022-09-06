@@ -1,0 +1,48 @@
+package member.model.service;
+
+import static common.JDBCTemplate.*;
+import java.sql.Connection;
+import java.util.List;
+
+import member.model.dao.MemberDao;
+import member.model.vo.Member;
+
+public class MemberService {
+	private MemberDao md = new MemberDao();
+	
+	// 1. 새회원 등록
+	public int insertMember(Member m) {
+		Connection con = getConnection();
+		int result = md.insertMember(con, m);
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		return result;
+	}
+	// 2. 모든 회원 조회
+	public List<Member> selectAll() {
+		Connection con = getConnection();
+		List<Member> mList = md.selectAll(con);
+		close(con);
+		return mList;
+	}
+	// 3. 아이디로 회원 조회
+	public Member selectGender(String memberId){
+		Connection con = getConnection();
+		Member member = md.selectMemberId(con, memberId);
+		close(con);
+		return member;
+	}
+	// 4. 성별로 회원 조회
+	public List<Member> selectGender(String gender) {
+		Connection con = getConnection();
+		
+	}
+	// 4. 회원 암호 변경
+	public void updatePassword(String memberId,String memberPwd) {
+		Connection con = getConnection();
+		M
+	}
+}

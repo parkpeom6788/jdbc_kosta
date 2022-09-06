@@ -1,0 +1,9 @@
+package com.model.dao;
+
+public class TestMain {
+	
+	public static void main(String[] args) {
+		JDBCModel model = new JDBCModel();
+		model.empSelectAll();
+	}
+}

@@ -1,0 +1,18 @@
+package test.step3;
+
+import java.sql.SQLException;
+
+import model.MemberDAO;
+
+public class TestInsertMember {
+	// 회원 등록을 하는 메서드 테스트
+	public static void main(String[] args) {
+		try {
+			MemberDAO dao =new MemberDAO();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

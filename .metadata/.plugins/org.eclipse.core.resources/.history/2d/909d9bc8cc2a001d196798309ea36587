@@ -1,0 +1,11 @@
+package book.common;
+
+public class JDBCTemplate {
+	// JDBC 기본설정값
+	
+	// 오라클 연결
+	public static Connection getConnection() {
+		
+	}
+	
+}

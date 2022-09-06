@@ -1,0 +1,79 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import common.DbConfig;
+
+public class CardDAO {
+
+	public void registerCardAndPointVer1(String id, String name, String pointType, int point) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DriverManager.getConnection(DbConfig.URL,DbConfig.USER,DbConfig.PASS);
+			String insertCardSql="insert into card(id,name) values(?,?)";
+			pstmt = con.prepareStatement(insertCardSql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			int cardResult = pstmt.executeUpdate();
+			System.out.println("카드 등록 OK :" + cardResult);
+
+			// 하나의 컨넥션 상에서 여러 개의 SQL을 실행하기 위해 pstmt를 close한다
+			// connection은 살아있다 
+			pstmt.close(); 
+			
+			String insertPointSql="insert into point(id,point_type,point) values(?,?,?)";
+			pstmt = con.prepareStatement(insertPointSql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pointType);
+			pstmt.setInt(3, point);
+			int pointResult = pstmt.executeUpdate();
+			System.out.println("포인트 등록 OK : " + pointResult);
+		} finally {
+			closeAll(pstmt,con);
+		}
+	} // method
+	
+	/* 트랜잭션 처리하는 메서드
+	 * 트랜잭션 : 더 이상 나눌 수 없는 작업 단위
+	 * 카드와 포인트 발급 트랜잭션은
+	 * 카드 및 포인트 발급이 모두 정상적으로 진행될때에만 실제 데이터베이스에 반영하게 하고
+	 * 만약 세부작업 진행 중 하나라도 문제가 발생하면 모든 작업은 취소되고 원상태로 복귀하도록 처리하는 ROLLBACK
+	 */
+	public void registerCardAndPointVer2(String id, String name, String pointtype , int point ) throws SQLException {	
+		Connection con = null;
+		PreparedStatement pstmt = null;
+	try {	
+		con = DriverManager.getConnection(DbConfig.URL, DbConfig.USER, DbConfig.PASS);
+		// JDBC 기본인 자동커밋( AutoCommit ) 모드를 수동커밋( MannualCommit ) 모드로 변경한다
+		con.setAutoCommit(false); 
+		String query = "insert into card(name,id) values(?,?)";
+		pstmt = con.prepareStatement(query);
+		pstmt.setString(1, name);
+		pstmt.setString(2,id);
+		pstmt.executeUpdate();
+		pstmt.close();
+			query = "insert into point(id,point,point_type) values(?,?,?)";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, point);
+			pstmt.setString(3, pointtype);
+			System.out.println("정상적으로 실행");
+			con.commit();
+	} catch(Exception e) {
+			System.out.println("포인트 발급 실패");
+			con.rollback(); 
+		} finally {
+			closeAll(pstmt,con);
+		}
+	}
+	public void closeAll(PreparedStatement pstmt, Connection con) throws SQLException {
+		if(pstmt!=null)	
+				pstmt.close();
+		if(con!=null)
+			con.close();
+		}
+	}

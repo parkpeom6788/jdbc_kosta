@@ -1,0 +1,11 @@
+package book.controller;
+
+import book.model.service.BookService;
+import book.view.BookView;
+
+public class bookController {
+	
+	private BookService bs = new BookService();
+	private BookView bv = new BookView();
+	
+}

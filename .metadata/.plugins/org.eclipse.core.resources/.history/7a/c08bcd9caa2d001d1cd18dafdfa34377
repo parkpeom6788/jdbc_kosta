@@ -1,0 +1,9 @@
+
+/*
+  Transaction ( 트랜잭션 ) : 작업단위
+  										더 이상 쪼갤 수 없는 작업 단위 -> 원자성
+  										데이터 베이스의 상태를 변경시키기 위해 수행하는 작업단위
+  
+ */
+
+select * from emp where ename  like '%S%';

@@ -1,0 +1,6 @@
+package model;
+// VO : Value Object 값을 표현 데이터베이스 테이블의 로우 사람정보하나
+public class MemberVO {
+	// 컬럼명
+	
+}

@@ -1,0 +1,43 @@
+-- GUESTBOOK 생성
+create table guestbook (
+	guestbook_no number primary key,
+	title varchar2(100) not null,
+	content varchar2(100) not null
+)
+-- DDL : 테이블 삭제
+drop table  guestbook;
+
+-- 시퀀스 생성 : GUESTBOOK_NO PK 값을 자동 생성
+create sequence guestbook_seq;
+
+-- 시퀀스 삭제 
+drop sequence guestbook_seq;
+
+select * from guestbook;
+
+-- 시퀀스 목록
+select * from user_sequences;
+
+-- 현재 시퀀스값 확인
+select last_number 
+from user_sequences
+where sequence_name = 'GUESTBOOK_SEQ';
+
+-- 시퀀스 초기화
+-- 현재 시퀀스의 increment 를 현재 값 만큼 차감
+
+alter sequence GUESTBOOK_SEQ increment by +22;
+
+-- 시퀀스 다음 값 실행
+select GUESTBOOK_seq.nextval from dual;
+
+-- 현재 시퀀스값 조회
+select GUESTBOOK_seql.currval from dual;
+
+-- 시퀀스의 increment를 1로 설정
+alter sequence GUESTBOOK_seq increment by 1;
+
+
+
+
+

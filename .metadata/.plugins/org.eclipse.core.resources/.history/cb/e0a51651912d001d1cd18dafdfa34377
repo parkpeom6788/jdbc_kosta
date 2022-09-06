@@ -1,0 +1,7 @@
+package test.step2;
+
+public class TestFindAllGuestBookList {
+	public static void main(String[] args) {
+		
+	}
+}

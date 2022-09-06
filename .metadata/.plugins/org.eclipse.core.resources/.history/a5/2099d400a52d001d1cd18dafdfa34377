@@ -1,0 +1,17 @@
+package test.step3;
+
+import java.util.ArrayList;
+
+import model.GuestBookDAO;
+import model.GuestBookVO;
+
+public class TestGuestBookListLikeKeyWord {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+		ArrayList<GuestBookVO> list = dao.findGuestBookListLikeKeyword();
+		
+		
+		
+		
+	}
+}

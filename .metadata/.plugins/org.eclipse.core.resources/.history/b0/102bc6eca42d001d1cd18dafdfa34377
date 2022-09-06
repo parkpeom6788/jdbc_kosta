@@ -1,0 +1,10 @@
+package test.step3;
+
+import model.GuestBookDAO;
+
+public class TestGuestBookListLikeKeyWord {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+		
+	}
+}

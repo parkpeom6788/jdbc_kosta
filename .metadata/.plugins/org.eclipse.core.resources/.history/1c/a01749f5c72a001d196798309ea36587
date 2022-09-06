@@ -1,0 +1,5 @@
+package book.model.vo;
+
+public class Book {
+	
+}

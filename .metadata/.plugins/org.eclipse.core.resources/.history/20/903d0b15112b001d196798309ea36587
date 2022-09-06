@@ -1,0 +1,16 @@
+package book.model.service;
+
+import java.util.List;
+
+import book.model.dao.BookDAO;
+import book.model.vo.Book;
+
+public class BookService {
+	private BookDAO bd = new BookDAO();
+	
+	public List<Book> bookSelectAll() {
+		
+		
+	}
+	
+}

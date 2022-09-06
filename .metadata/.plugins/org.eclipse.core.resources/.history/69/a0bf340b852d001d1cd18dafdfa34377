@@ -1,0 +1,17 @@
+-- GUESTBOOK 생성
+create table guestbook (
+	guestbook_no number primary key,
+	title varchar2(100) not null,
+	content varchar2(100) not null
+)
+-- DDL : 테이블 삭제
+drop table  guestbook;
+
+-- 시퀀스 생성 : GUESTBOOK_NO PK 값을 자동 생성
+create sequence guestbook_seq;
+
+drop sequence guestbook_seq;
+
+select * from guestbook;
+
+insert into guestbook(guestbook_no,title,content) values(guestbook_seq,"gg","gg");

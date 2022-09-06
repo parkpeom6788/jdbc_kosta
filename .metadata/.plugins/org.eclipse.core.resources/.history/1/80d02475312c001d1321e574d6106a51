@@ -1,0 +1,9 @@
+package member.modl.vo;
+
+public class MemberMenu {
+	public static void main(String[] args) {
+		MemberMenu() mm = new MemberMenu();
+		mm.displayMenu();
+		
+	}
+}

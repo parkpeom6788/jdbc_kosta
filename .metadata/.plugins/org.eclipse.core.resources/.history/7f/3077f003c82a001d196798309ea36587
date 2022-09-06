@@ -1,0 +1,25 @@
+package book.model.vo;
+
+public class Book {
+	
+	private int bookid; // 도서 번호
+	private String title; // 도서명
+	private String author; // 작가명
+	private String publisher; // 출판사
+	private String puliisherDate; // 출판일 - String형식으로 받아 입력예정
+	private int price;
+	
+	public Book() {
+	}
+	public Book(int bookid, String title, String author, String publisher, String puliisherDate, int price) {
+		super();
+		this.bookid = bookid;
+		this.title = title;
+		this.author = author;
+		this.publisher = publisher;
+		this.puliisherDate = puliisherDate;
+		this.price = price;
+	}
+	
+	
+}

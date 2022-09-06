@@ -1,0 +1,17 @@
+package test;
+
+import java.util.ArrayList;
+
+import model.PetDAO;
+import model.PetVO;
+public class TestFindPetAll {
+	public static void main(String[] args) {
+		PetDAO dao = new PetDAO();
+		ArrayList<PetVO> list = dao.findPetList();
+		
+		for(int i=0; i <list.size(); i++) {
+			System.out.println();
+		}
+		
+	}
+}

@@ -1,0 +1,4 @@
+select id,password,name,address from member;
+
+-- insert 
+insert into member(id,password,name,address) values('test','a','엔젤','오리');

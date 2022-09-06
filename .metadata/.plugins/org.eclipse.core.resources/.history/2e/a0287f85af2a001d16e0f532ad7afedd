@@ -1,0 +1,18 @@
+package test;
+
+import java.util.ArrayList;
+
+import model.PetDAO;
+import model.PetVO;
+public class TestFindPetAll {
+	public static void main(String[] args) {
+		PetDAO dao = new PetDAO();
+		ArrayList<PetVO> list = dao.findPetList();
+		
+		for(int i=0; i <list.size(); i++) {
+			String.format("이름 %s  주인 %s  종 %s 성별 %s 생일 %s  죽은날짜 %s ",
+					list.get(i).getName(),list.get(i).getOwner(),list.get(i).getSpecies(),list.get(i).getSex()
+					,list.get(i).getBirth(),list.get(i).getDeath());
+		}
+	}
+}

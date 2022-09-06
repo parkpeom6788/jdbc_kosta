@@ -1,0 +1,6 @@
+package test.step1;
+
+//아이디로 회원정보를 검색
+public class TestFindMemberById {
+
+}

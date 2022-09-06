@@ -1,0 +1,28 @@
+**01-jdbc-basic-inst**
+
+JDBC : Java Database Connectivity
+	자바 어플리케이션과 데이터베이스의 연동을 위한 기술
+	
+일반유저 <------> Java Application <------>  JDBC ( interface , driver 구현체 ) <-- SQL --->  <-------> Database ( Oracle ) 
+
+JDBC 설계구조
+- JDBC 표준 ( 인터페이스 ) 을 설계하는 측 ( Sun < Oracle ) 
+- DB Vendor(회사)에서는 JDBC 표준에 의거해 Driver program( ex - ojdbc6.jar ) 을 개발 
+																		-> JDBC Interface를 구현(implements) 한 클래스들
+- Java Application ( 자바 응용프로그램 ) 개발 진영
+
+Java 프로그램 개발시에는 JDBC 표준 인터페이스를 보고 개발하면 실제 동작은 각 DB Vendor 에서
+만든 구현체들이 동작되는 구조
+
+-> 인터페이스 : 다양한 계층 구조 형성을 통한 다형성 , Polymorphism 적용 
+
+-> Polymorphism 다형성 : 하나의 메세지 방식으로 다양한 객체들이 각자의 방식으로 동작하는 성질
+
+JDBC Interface 관련한 다형성을 설명
+-> 응용프로그램 개발(어플리케이션)은 JDBC 표준 인터페이스를 보고 개발하면
+	다양한 데이터베이스 객체들이 각자의 방식으로 동작한다 
+	데이터베이스가 변경되어도 외부 영향( 프로그램 수정 )은 최소화 -> Loose Coupling 느슨한 결합도 -> 유지보수성 향상 
+	다양한 데이터베이스를 하나의 방식으로 제어 하기 위해서 ! 
+		
+
+ 

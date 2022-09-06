@@ -1,0 +1,27 @@
+package model;
+
+public class GuestBookVO {
+	private int guestBookNo;
+	private String title;
+	private String content;
+	
+	public GuestBookVO() {
+		super();
+	}
+
+	// 시퀀스로 쓰일 Bookno 제외
+	public GuestBookVO(String title, String content) {
+		super();
+		this.title = title;
+		this.content = content;
+	}
+
+	public GuestBookVO(int guestBookNo, String title, String content) {
+		super();
+		this.guestBookNo = guestBookNo;
+		this.title = title;
+		this.content = content;
+	}
+	
+	
+}

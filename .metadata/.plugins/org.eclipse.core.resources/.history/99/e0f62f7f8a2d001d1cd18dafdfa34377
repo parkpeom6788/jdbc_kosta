@@ -1,0 +1,21 @@
+package model;
+
+import java.util.Scanner;
+
+// 방명록에 글쓰기
+public class TestRegisterGuestBook {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+			
+			Scanner scanner = new Scanner(System.in);
+			
+			System.out.println("방명록 글제목을 입력하세요 : ");
+			
+			dao.registerGuestBook(new GuestBookVO());
+			
+			scanner.close();
+			
+		}
+	}
+	
+

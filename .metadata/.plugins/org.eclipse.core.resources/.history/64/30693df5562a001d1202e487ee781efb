@@ -1,0 +1,26 @@
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class JdbcExample {
+	
+	Connection con;
+	Statement stmt;
+	ResultSet rs;
+	
+	String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	String id = "scott";
+	String pw = "tiger";
+	
+	public JdbcExample() {
+	
+		Class.forName(")
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		JdbcExample jdbcExample = new JdbcExample();
+		
+	}
+}

@@ -1,0 +1,57 @@
+package member.controller;
+
+import java.util.List;
+
+import member.model.service.MemberService;
+import member.model.vo.Member;
+import member.view.MemberView;
+
+public class MemberController {
+	
+	private MemberService ms = new MemberService();
+	private MemberView mv = new MemberView();
+	
+	// 1. 새 회원 등록
+	public void insertMember(Member m) {
+		int result = ms.insertMember(m);
+		
+		if(result > 0) {
+			mv.displaySuccess("insert");
+		} else {
+			mv.displayError("insert");
+		}
+	}
+	
+	// 2. 모든 회원 조회
+	public void selectAll() {
+		List<Member> mList= ms.selectAll();
+		mv.displayList(mList);
+	}
+	
+	// 3. 아이디로 회원 조회
+	public void selectMemberId(String memberId) {
+		Member member = ms.selectMemberId(memberId);
+		mv.displaySuccess(memberId);
+	}
+	// 4. 성별로 회원 조회
+	public void selectGender(String gender) {
+		List<Member> mList = ms.selectGender(gender);
+		mv.displayList(mList);
+	}
+	
+	//5. 회원 암호 변경
+	public void updatePassword(String memberId , String memberPwd) {
+		int result = ms.updatePassword(memberId, memberPwd);
+		
+		if(result > 0) {
+			mv.displaySuccess("updatePassword");
+		} else {
+			mv.displayError("updatePassword");
+		}
+	}
+	//6. 회원 이메일 변경
+	public void updateEmail(String memberId,String email) {
+		int result = ms.updateEmail(memberId, memberId);
+		
+	}
+}

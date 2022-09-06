@@ -1,0 +1,21 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+// 방명록에 글쓰기
+public class TestRegisterGuestBook {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+		try {
+			dao.registerGuestBook(new GuestBookVO());
+			
+			System.out.println(dao.getConnection());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

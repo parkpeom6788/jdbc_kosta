@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;common&apos; to &apos;05-jdbc-transaction/src&apos;&#x0D;&#x0A;- Original project: &apos;04-jdbc-guestbook-sequence&apos;&#x0D;&#x0A;- Destination element: &apos;05-jdbc-transaction/src&apos;&#x0D;&#x0A;- Original element: &apos;04-jdbc-guestbook-sequence/src/common&apos;" description="Copy package" destination="=05-jdbc-transaction/src" element1="/src&lt;common" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1662449226144" version="1.0"/>
+</session>

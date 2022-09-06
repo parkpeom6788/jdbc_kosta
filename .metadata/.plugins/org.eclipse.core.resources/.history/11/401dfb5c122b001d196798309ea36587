@@ -1,0 +1,54 @@
+package book.model.service;
+
+import java.sql.Connection;
+import java.util.List;
+
+import book.model.dao.BookDAO;
+import book.model.vo.Book;
+
+public class BookService {
+	private BookDAO bd = new BookDAO();
+	
+	public List<Book> bookSelectAll() {
+		Connection conn = getConncetion();
+		List<Book> bookSelectAll = bd.bookSelectAll(conn);
+		close(conn);
+		
+		return bookSelectAll;
+	}
+	// 1. 도서 추가
+	public int bookInsert(Book bookAdd) {
+		Connection conn = getConnection();
+		int result = bd.bookInsert(conn, bookAdd);
+		
+		if(result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+		close(conn);
+		
+		return result;
+	}
+	// 3. 도서 정보 삭제
+	public int bookDelete(int bookId) {
+		Connection conn = getConnection();
+		int result = bd.bookDelete(conn, bookId);
+		
+		if(result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+		close(conn);
+		
+		return result;
+	}
+	
+	// 2. 도서 정보 수정
+	public int bookUpdate(Book book) {
+		Connection conn = getConnection();
+		Book book = bd.bookSelectId(conn, bookid);
+		
+	}
+}

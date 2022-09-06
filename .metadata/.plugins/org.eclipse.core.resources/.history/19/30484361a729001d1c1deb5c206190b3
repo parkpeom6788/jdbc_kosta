@@ -1,0 +1,31 @@
+package step1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class TestjdbcSelectAll {
+	public static void main(String[] args) {
+		String driver = "oracle.jdbc.OracleDriver";
+		String dbUrl = "jdbc:oracle:thin:@127.0.0.1:1521:xe";// url : 유일한 자원 위치 , 데이터베이스 서버 위치를 정해줘야 서버에 접속 , @아이피 :포트:데이터베이스 이름 필수 
+																
+		try {
+			Class.forName(driver); // class loading , spring - 리플렉션 API 기본 작업이 클래스 로딩 - Static , driver 가 로드 되도록 구현되어 있음 
+			
+			System.out.println("oracle jdbc driver loading");
+			Connection con =  DriverManager.getConnection(dbUrl, "scott", "tiger"); // 드라이버 로딩 , 연결한걸 써먹는다 
+			System.out.println("oracle db connection");
+			
+			// 말을 준비
+			String sql = "select id,password,name,address from member";
+			PreparedStatement pstmt = con.prepareStatement(sql); // 미리 만들어둔 sql문  preparedStatement 가 속도가 더 빠르다
+			= pstmt.executeQuery(); // 실행문을 질의한다. 결과의 집합으로 반환한다.
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

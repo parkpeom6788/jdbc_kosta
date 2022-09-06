@@ -1,0 +1,8 @@
+package book.model.service;
+
+import book.model.dao.BookDAO;
+
+public class BookService {
+	private BookDAO bd = new BookDAO();
+	
+}

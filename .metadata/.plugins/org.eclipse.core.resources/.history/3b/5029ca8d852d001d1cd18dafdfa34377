@@ -1,0 +1,13 @@
+package model;
+
+public class GuestBookVO {
+	private int guestBookNo;
+	private String title;
+	private String content;
+	
+	public GuestBookVO() {
+		super();
+	}
+	
+	
+}

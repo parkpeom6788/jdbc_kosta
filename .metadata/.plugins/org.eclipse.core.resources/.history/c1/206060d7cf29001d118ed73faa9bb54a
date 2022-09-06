@@ -1,0 +1,32 @@
+package step4;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import common.DbConfig;
+
+/*
+  	id 가 spring 인 회원의 address 를 미금에서 오리로 수정하고자 한다 
+ */
+public class TestJdbcUpdate {
+	
+	public static void main(String[] args) {
+		/*Oracle JDBC Driver loading
+		 * Connection
+		 * String sql
+		 * PreparedStatement
+		 */
+		try {
+			Class.forName(DbConfig.DRIVER);
+			Connection con = DriverManager.getConnection(DbConfig.URL, "scott", "tiger");
+			String sql = "";
+			con.
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

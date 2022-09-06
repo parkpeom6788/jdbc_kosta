@@ -1,0 +1,19 @@
+package test.step3;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import model.GuestBookDAO;
+import model.GuestBookVO;
+
+public class TestGuestBookListLikeKeyWord {
+	public static void main(String[] args) {
+		GuestBookDAO dao = new GuestBookDAO();
+		Scanner scanner = new Scanner(System.in);
+		String keyword;
+		ArrayList<GuestBookVO> list = dao.findGuestBookListLikeKeyword(keyword);
+		scanner.close();
+		
+		
+	}
+}

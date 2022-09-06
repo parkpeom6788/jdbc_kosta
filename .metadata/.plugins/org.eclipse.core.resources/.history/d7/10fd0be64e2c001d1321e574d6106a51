@@ -1,0 +1,12 @@
+package member.view;
+
+public class MemberView {
+
+	// 성공 알림용 뷰
+	public void displaySuccess(String msg) {
+
+		switch (msg) {
+
+		}
+	}
+}

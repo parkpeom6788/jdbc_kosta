@@ -1,0 +1,18 @@
+package test.step5;
+
+import java.sql.SQLException;
+
+import model.MemberDAO;
+
+public class TestFindMemberAll {
+	
+	public static void main(String[] args) {
+
+		try {
+			MemberDAO dao = new MemberDAO();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}	
+	}
+}

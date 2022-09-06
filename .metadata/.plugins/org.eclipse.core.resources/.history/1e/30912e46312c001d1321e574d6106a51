@@ -1,0 +1,5 @@
+package member.modl.vo;
+
+public class MemberMenu {
+
+}

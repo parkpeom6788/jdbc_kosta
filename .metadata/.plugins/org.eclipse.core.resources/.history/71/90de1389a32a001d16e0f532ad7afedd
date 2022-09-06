@@ -1,0 +1,22 @@
+package model;
+
+public class PetVO {
+	private String name;
+	private String owner;
+	private String species;
+	private String sex;
+	private String birth;
+	private String death;
+	
+	public PetVO(String name, String owner, String species, String sex, String birth, String death) {
+		super();
+		this.name = name;
+		this.owner = owner;
+		this.species = species;
+		this.sex = sex;
+		this.birth = birth;
+		this.death = death;
+	}
+	
+	
+}

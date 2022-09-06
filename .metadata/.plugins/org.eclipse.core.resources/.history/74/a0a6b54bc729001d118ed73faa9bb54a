@@ -1,0 +1,7 @@
+**01-jdbc-basic-inst**
+
+JDBC : Java Database Connectivity
+	자바 어플리케이션과 데이터베이스의 연동을 위한 기술
+	
+일반유저 <------> Java Application <------>  JDBC    <-------> Database ( Oracle ) 
+

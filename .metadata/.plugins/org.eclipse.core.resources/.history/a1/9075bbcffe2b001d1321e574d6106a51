@@ -1,0 +1,18 @@
+package com.model.dao;
+
+import java.sql.Date;
+
+public class Employee {
+	private int empNo;
+	private String empName;
+	private String job;
+	private int mgr;
+	private Date hireDate;
+	private int sql;
+	private int comm;
+	private int deptNo;
+	
+	public Employee() {
+	}
+	
+}

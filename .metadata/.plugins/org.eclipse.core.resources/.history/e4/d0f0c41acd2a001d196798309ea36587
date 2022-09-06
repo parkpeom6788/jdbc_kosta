@@ -1,0 +1,27 @@
+package book.common;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class JDBCTemplate {
+	// JDBC 기본설정값
+	
+	// 오라클 연결
+	public static Connection getConnection() {
+		Connection conn = null;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:this:@localhost:1521:xe", "scott", "tiger");
+			conn.setAutoCommit(false);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			
+		}
+	}
+	
+}

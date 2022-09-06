@@ -1,0 +1,31 @@
+package book.view;
+
+import java.util.List;
+
+import book.model.vo.Book;
+
+public class BookView {
+	
+	public void bookErrorMsg(String msg) {
+		
+		switch(msg) {
+		case "insert":
+			System.out.println("도서 정보 추가 실패");
+			break;
+		case "delete":
+			System.out.println("도서 정보 삭제 실패");
+			break;
+		case "update":
+			System.out.println("도서 정보 수정 실패");
+			break;
+		case "bookid":
+			System.out.println("도서 검색 아이디 찾기 실패");
+			break;
+		default :
+			System.out.println("오류를 찾을수 없음");
+		}
+	}
+	public void bookSelectView(List<Book> bookList) {
+		System.out.println("=== 도서 전체 목록 조회 ===");
+	}
+}

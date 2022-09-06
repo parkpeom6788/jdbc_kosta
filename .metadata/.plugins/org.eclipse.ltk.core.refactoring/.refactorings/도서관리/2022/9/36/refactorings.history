@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;book.controller.bookController&apos; to &apos;BookController&apos;&#x0D;&#x0A;- Original project: &apos;도서관리&apos;&#x0D;&#x0A;- Original element: &apos;book.controller.bookController&apos;&#x0D;&#x0A;- Renamed element: &apos;book.controller.BookController&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;bookController&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;book.controller{bookController.java[bookController" matchStrategy="1" name="BookController" qualified="false" references="true" similarDeclarations="false" stamp="1662192610698" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+package step4;
+
+import common.DbConfig;
+
+public class TestJdbcUpdate {
+	public static void main(String[] args) {
+		
+		Class.forName(DbConfig.DRIVER);
+		
+	}
+}

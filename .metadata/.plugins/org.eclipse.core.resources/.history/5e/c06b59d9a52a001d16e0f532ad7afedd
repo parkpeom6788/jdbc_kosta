@@ -1,0 +1,17 @@
+package test;
+
+import java.util.Scanner;
+
+import model.PetVO;
+
+public class TestFindPetByName {
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		PetDAO pet = new PetDAO();
+		
+		
+		
+	}
+}

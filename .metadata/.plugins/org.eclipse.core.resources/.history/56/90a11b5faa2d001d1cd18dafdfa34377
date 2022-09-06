@@ -1,0 +1,10 @@
+
+/*
+  Transaction ( 트랜잭션 ) : 작업단위
+  											더 이상 쪼갤 수 없는 작업 단위 -> 원자성
+  
+  
+  
+ */
+
+select * from emp where ename  like '%S%';

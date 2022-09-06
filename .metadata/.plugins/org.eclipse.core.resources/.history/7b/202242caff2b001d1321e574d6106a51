@@ -1,0 +1,89 @@
+package com.model.dao;
+
+import java.sql.Date;
+
+public class Employee {
+	private int empNo;
+	private String empName;
+	private String job;
+	private int mgr;
+	private Date hireDate;
+	private int sal;
+	private int comm;
+	private int deptNo;
+	
+	public Employee() {
+	}
+	public Employee(int empNo, String job, int sql, int comm) {
+		super();
+		this.empNo = empNo;
+		this.job = job;
+		this.sql = sql;
+		this.comm = comm;
+	}
+	public Employee(int empNo, String empName, String job, int mgr, Date hireDate, int sql, int comm, int deptNo) {
+		super();
+		this.empNo = empNo;
+		this.empName = empName;
+		this.job = job;
+		this.mgr = mgr;
+		this.hireDate = hireDate;
+		this.sql = sql;
+		this.comm = comm;
+		this.deptNo = deptNo;
+	}
+	public int getEmpNo() {
+		return empNo;
+	}
+	public void setEmpNo(int empNo) {
+		this.empNo = empNo;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
+	}
+	public int getMgr() {
+		return mgr;
+	}
+	public void setMgr(int mgr) {
+		this.mgr = mgr;
+	}
+	public Date getHireDate() {
+		return hireDate;
+	}
+	public void setHireDate(Date hireDate) {
+		this.hireDate = hireDate;
+	}
+	public int getSql() {
+		return sql;
+	}
+	public void setSql(int sql) {
+		this.sql = sql;
+	}
+	public int getComm() {
+		return comm;
+	}
+	public void setComm(int comm) {
+		this.comm = comm;
+	}
+	public int getDeptNo() {
+		return deptNo;
+	}
+	public void setDeptNo(int deptNo) {
+		this.deptNo = deptNo;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empNo=" + empNo + ", empName=" + empName + ", job=" + job + ", mgr=" + mgr + ", hireDate="
+				+ hireDate + ", sql=" + sql + ", comm=" + comm + ", deptNo=" + deptNo + "]";
+	}
+	
+}

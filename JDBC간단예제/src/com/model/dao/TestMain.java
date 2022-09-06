@@ -1,0 +1,24 @@
+package com.model.dao;
+
+public class TestMain {
+	
+	public static void main(String[] args) {
+		JDBCModel model = new JDBCModel();
+		// 1. 회원정보 전체조회
+		// model.empSelectAll();
+		// 2. 회원정보 추가
+		// 9000,"ERIC","MANAGER",8000,오늘날짜,3000,90,30 회원정보로 추가
+		// Employee emp = new Employee(9000,"ERIC","MANAGER",8000, 3000,90,30);
+		// model.empMemberAdd(emp);
+		
+		// 3. 회원정보 1명 조회 
+		//model.empSelectOne(9000);
+		
+		// 4.회원정보 한명 수정하기 
+		// int empNo, String job, int sal, int comm
+		Employee empModify = new Employee(9000, "ANALYST", 2000, 10);
+		model.empUpdate(empModify);
+		
+		// 
+	}
+}

@@ -1,0 +1,11 @@
+package member.controller;
+
+import member.model.vo.Member;
+
+public class MemberController {
+
+	public void insertMember(Member inputMember) {
+		
+	}
+	
+}

@@ -1,0 +1,12 @@
+package model;
+
+public class PetVO {
+	private String name;
+	private String owner;
+	private String species;
+	private String sex;
+	private String birth;
+	private String death;
+	
+	
+}

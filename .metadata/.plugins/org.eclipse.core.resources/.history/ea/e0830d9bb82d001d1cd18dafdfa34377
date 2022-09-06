@@ -1,0 +1,13 @@
+package test.step1;
+
+public class TestThransaction1 {
+	public static void main(String[] args) {
+		try {
+			CardDAO dao = new CardDAO();
+			// 정상 수행
+			dao.registerCardAndPointVer1("spring", "성시경", "스벅", 10000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

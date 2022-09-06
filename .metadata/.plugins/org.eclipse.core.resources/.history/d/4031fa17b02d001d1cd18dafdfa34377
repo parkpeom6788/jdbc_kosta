@@ -1,0 +1,6 @@
+
+create table card(
+	id varchar2(100) primary key,
+	name varchar2(100) not null,
+	
+)

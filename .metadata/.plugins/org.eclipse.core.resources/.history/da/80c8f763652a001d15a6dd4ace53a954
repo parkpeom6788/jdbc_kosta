@@ -1,0 +1,5 @@
+package model;
+// VO : Value Object 값을 표현 
+public class MemberVO {
+	
+}

@@ -1,0 +1,21 @@
+package test;
+
+import java.util.Scanner;
+
+import model.PetDAO;
+import model.PetVO;
+
+public class TestFindPetByName {
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		try {
+			PetDAO pet = new PetDAO();
+			
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}

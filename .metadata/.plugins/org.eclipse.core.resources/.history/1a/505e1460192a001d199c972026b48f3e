@@ -1,0 +1,14 @@
+package step4;
+
+import common.DbConfig;
+
+public class TestJdbcUpdate {
+	public static void main(String[] args) {
+		
+		try {
+			Class.forName(DbConfig.DRIVER);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}

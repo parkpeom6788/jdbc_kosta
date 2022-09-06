@@ -1,0 +1,17 @@
+package book.view;
+
+public class BookView {
+	
+	public void bookErrorMsg(String msg) {
+		
+		switch(msg) {
+		case "insert":
+			System.out.println("도서 정보 추가 실패");
+			break;
+		case "delete":
+			System.out.println("도서 정보 삭제 실패");
+			
+		}
+		
+	}
+}

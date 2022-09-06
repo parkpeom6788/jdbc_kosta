@@ -1,0 +1,6 @@
+package test.step3;
+
+public class TestInsertMember {
+	// 회원 등록을 하는 메서드 테스트
+	
+}

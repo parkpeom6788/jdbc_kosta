@@ -1,0 +1,18 @@
+package step2;
+
+import common.DbConfig;
+
+public class TestJdbcInsert {
+	public static void main(String[] args) {
+		try {
+			Class.forName(DbConfig.DRIVER);
+			
+		
+		
+		
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

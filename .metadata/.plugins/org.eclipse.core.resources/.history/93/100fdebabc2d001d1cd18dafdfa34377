@@ -1,0 +1,20 @@
+package test.step2;
+
+import model.CardDAO;
+
+public class TestThransaction2 {
+	public static void main(String[] args) {
+		try {
+			CardDAO dao = new CardDAO();
+			// 정상 수행
+			// dao.registerCardAndPointVer1("spring", "성시경", "스벅", 10000);
+			
+			// 비정상 수행 상황 테스트 => Exception ( 포인트 발급 시점에 )
+			dao.registerCardAndPointVer2("java", "아이유", null, 9000);
+
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
